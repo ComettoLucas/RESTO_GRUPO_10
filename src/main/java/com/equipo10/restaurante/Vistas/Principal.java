@@ -294,9 +294,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void btnCargaMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargaMesasActionPerformed
-        CargarMesas carvw=new CargarMesas();
+        CargaMesas carvw=new CargaMesas(null,true);
+        carvw.setLocationRelativeTo(Login.prin);
         carvw.setVisible(true);
-        carvw.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCargaMesasActionPerformed
 
 
