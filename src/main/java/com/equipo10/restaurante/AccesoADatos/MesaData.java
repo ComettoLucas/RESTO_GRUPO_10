@@ -5,6 +5,8 @@ import com.equipo10.restaurante.Entidades.Reserva;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class MesaData {
@@ -16,31 +18,45 @@ public class MesaData {
         con = Conexion.getConexion("restaurante");
     }
 
-   public void guardarMesa(Mesa mesa) {
-    PreparedStatement ps;
+   public void insertarMesas(int num) {
+       for (int i = 0; i < num; i++) {
+           while(comprobarSiHayMenosDe10Mesas()){
+           PreparedStatement ps;
        try {
-            String sql = "INSERT INTO mesa (capacidad, estado, idReserva) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO mesa (capacidad, estado) VALUES (?, ?)";
             ps = con.prepareStatement(sql);
-            ps.setInt(1, mesa.getCapacidad());
-            ps.setBoolean(2, mesa.isEstado());
-            if (mesa.getIdReserva() != null) {
-                ps.setInt(3, mesa.getIdReserva().getIdReserva());
-            } else {
-                ps.setNull(3, Types.INTEGER); // Usar setNull para indicar un valor NULL
-            }
-       
+            ps.setInt(1, 4);
+            ps.setBoolean(2, false);   
         int end = ps.executeUpdate();
 
-        if (end == 1) {
-        } else {
-            JOptionPane.showMessageDialog(null, "No se pudo guardar la Mesa.");
+        if (end == 0) {
+             JOptionPane.showMessageDialog(null, "error al cargar las mesas");
+            
         }
-
         ps.close();
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(null, "Error al guardar Mesa: " + ex.getMessage());
-    }
+    }}
+       }
+       JOptionPane.showMessageDialog(null, "Mesas cargadas");
+       
 }
+   public boolean comprobarSiHayMenosDe10Mesas(){
+       String sql="SELECT  COUNT(*) AS filas FROM Mesa";
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+                if(rs.getInt(1)<10){
+                    return true;
+                }
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(MesaData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       return false;
+   }
 
     public List<Mesa> obtenerMesas(int num) {
         List<Mesa> lista = new ArrayList<>();
@@ -136,10 +152,8 @@ public class MesaData {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 mesa.setIdMesa(rs.getInt(1)); //2 es numero
-                //falta el numero de mesa columna 2
-                mesa.setCapacidad(rs.getInt(3));
-                mesa.setEstado(rs.getBoolean(4));
-                mesa.setEliminada(rs.getBoolean(6));
+                mesa.setCapacidad(rs.getInt(2));
+                mesa.setEstado(rs.getBoolean(3));
                 int idReserva = rs.getInt("idReserva");
                 if (!rs.wasNull()) {
                     Reserva reserva = res.buscarReserva(idReserva);

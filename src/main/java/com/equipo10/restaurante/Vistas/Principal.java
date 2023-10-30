@@ -13,7 +13,6 @@ public class Principal extends javax.swing.JFrame {
 
     public static ReservaVista rv = new ReservaVista();
     int xMouse, yMouse;
-    MesaVista mesaV = new MesaVista();
     CategoriaData ca = new CategoriaData();
 
     public Principal() {
@@ -21,8 +20,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/patron.png")));
         //imagenes();
         ca.CargarEnumsABD();
-        crearVentana(mesaV);
-        
     }
 
     @SuppressWarnings("unchecked")
@@ -41,6 +38,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        btnCargaMesas = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         MenuCargaProductos = new javax.swing.JMenuItem();
         btnSalir = new javax.swing.JMenu();
@@ -167,7 +165,6 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar1.setForeground(new java.awt.Color(251, 250, 241));
         jMenuBar1.setBorderPainted(false);
         jMenuBar1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jMenuBar1.setOpaque(true);
         jMenuBar1.setPreferredSize(new java.awt.Dimension(833, 23));
         jMenuBar1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -191,6 +188,14 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem1);
+
+        btnCargaMesas.setText("Carga Mesas");
+        btnCargaMesas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargaMesasActionPerformed(evt);
+            }
+        });
+        jMenu1.add(btnCargaMesas);
 
         jMenuBar1.add(jMenu1);
 
@@ -246,6 +251,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesasActionPerformed
         //necesito crear una nueva instancia para que refresque los botones
+       MesaVista mesaV = new MesaVista();
        crearVentana(mesaV);
     }//GEN-LAST:event_btnMesasActionPerformed
 
@@ -287,10 +293,17 @@ public class Principal extends javax.swing.JFrame {
         cm.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void btnCargaMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargaMesasActionPerformed
+        CargarMesas carvw=new CargarMesas();
+        carvw.setVisible(true);
+        carvw.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnCargaMesasActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenuItem MenuCargaProductos;
+    private javax.swing.JMenuItem btnCargaMesas;
     private javax.swing.JButton btnMesas;
     private javax.swing.JButton btnPedidos;
     private javax.swing.JMenu btnSalir;
