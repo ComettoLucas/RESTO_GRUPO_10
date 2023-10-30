@@ -92,14 +92,17 @@ public class MesaVista extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPmesas;
     // End of variables declaration//GEN-END:variables
-
+    private static final Color VERDE_CLARO = new Color(98, 210, 106);
+    private static final Color ROJO_CLARO = new Color(211,25,0);
+    private static final Color AMARILLO_CLARO = new Color(253,202,64);
+    
     public void abrirMesa(int numeroMesa) {
         MesaData mesaData = new MesaData();
         
         Mesa mesa = new Mesa();
         mesa = mesaData.buscarMesaxNRO(numeroMesa);
         
-        if (!mesa.isEstado()) { 
+        if (!mesa.estaAbierta()) { 
             mesa.setEstado(true);
             mesaData.AbrirMesaxNRO(mesa);
             JOptionPane.showMessageDialog(null, "Mesa " + numeroMesa + " Abierta");
@@ -175,13 +178,13 @@ public void agregarMesasConEstadoDesdeBaseDeDatos() {
             Font font = new Font("Segoe UI", Font.BOLD, 12);
             mesaButton.setFont(font);
 
-            if (mesita.isEstado()) {
-                mesaButton.setBackground(Color.green);
+            if (mesita.estaAbierta()) {
+                mesaButton.setBackground( VERDE_CLARO);
             } else {
-                mesaButton.setBackground(Color.red);
+                mesaButton.setBackground(ROJO_CLARO);
                 if (mesita.getIdReserva().getIdReserva() > 0) {
                     // JOptionPane.showMessageDialog(null, mesita.getIdReserva());
-                    mesaButton.setBackground(Color.yellow);
+                    mesaButton.setBackground(AMARILLO_CLARO);
 
                 }
 
@@ -192,16 +195,16 @@ public void agregarMesasConEstadoDesdeBaseDeDatos() {
 
                     if (e.getClickCount() == 2) {
                         // Cambiar el color del botón y actualizar el estado de la mesita en la base de datos
-                        if (mesaButton.getBackground().equals(Color.green)) {//si esta verde esta abierta
+                        if (mesaButton.getBackground().equals( VERDE_CLARO)) {//si esta verde esta abierta
 
                             if (cerrarMesa(mesita.getIdMesa())) {//aca veo si la pude cerrar (cerrar devuelve booleano)
-                                mesaButton.setBackground(Color.red);
+                                mesaButton.setBackground(ROJO_CLARO);
                             }//si pude la pinto 
 
                         } else {
 
                             abrirMesa(mesita.getIdMesa());//aca revisar si la pude abrir aunque no deberia dar problemas
-                            mesaButton.setBackground(Color.green);
+                            mesaButton.setBackground( VERDE_CLARO);
                         }
                     }
                 }

@@ -56,7 +56,7 @@ public class Mesa {
         this.capacidad = capacidad;
     }
 
-    public boolean isEstado() { // si esta abierta
+    public boolean estaAbierta() { // si esta abierta
         return estado;
     }
 
