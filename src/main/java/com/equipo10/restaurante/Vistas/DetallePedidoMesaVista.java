@@ -5,7 +5,6 @@ import com.equipo10.restaurante.AccesoADatos.DetallePedidoData;
 import com.equipo10.restaurante.AccesoADatos.PedidoData;
 import com.equipo10.restaurante.AccesoADatos.ProductoData;
 import com.equipo10.restaurante.Entidades.DetallePedido;
-import com.equipo10.restaurante.Entidades.Pedido;
 import com.equipo10.restaurante.Entidades.Producto;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,16 +17,17 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Facua
  */
-public class DetallePedidoVista extends javax.swing.JDialog {
+public class DetallePedidoMesaVista extends javax.swing.JDialog {
 
     DefaultTableModel modelo = new DefaultTableModel();
     private static DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
-    int idPedido;
+
     int xMouse, yMouse;
-    public DetallePedidoVista(java.awt.Frame parent, boolean modal,int id) {
+    int idMesa;
+    public DetallePedidoMesaVista(java.awt.Frame parent, boolean modal,int id) {
         super(parent, modal);
         initComponents();
-        idPedido=id;
+        idMesa=id;
         modelo = (DefaultTableModel) jtTablaProductos.getModel();
         modeloTabla();
        cargarTabla();
@@ -198,16 +198,19 @@ public class DetallePedidoVista extends javax.swing.JDialog {
     private void cargarTabla() {
         double total=0.0;
         limpiarTabla();
-        DetallePedidoData dpd=new DetallePedidoData();
+        Producto produ;
         ProductoData prd = new ProductoData();
-        Pedido pedido=new Pedido(idPedido);
+        DetallePedidoData dpd = new DetallePedidoData();
+        List<DetallePedido> listaDetallePedido = new ArrayList<>();
         
-        List<DetallePedido> detallePedido=dpd.obtenerDetalleXPedido(pedido);
+        listaDetallePedido=dpd.obtenerProductosDeLaMesa(idMesa); //mesa 9 para probar acordate de cambiarlo!!!!
         
-        for (DetallePedido cada : detallePedido) {
+        for (DetallePedido cada : listaDetallePedido) {
             total += cada.getTotalPedido();
             modelo.addRow(new Object[]{cada.getPedido().getIdPedido(),prd.TraerProducto(cada.getIdProducto()),cada.getCantidad(),cada.getTotalPedido()});
                  
         }
+        jlTotal.setText("Total: " + total);
+       
     }
 }

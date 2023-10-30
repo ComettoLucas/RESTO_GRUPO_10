@@ -161,7 +161,7 @@ public class DetallePedidoData {
 "FROM pedidoDetalle pd\n" +
 "JOIN pedido p ON pd.idPedido = p.idPedido\n" +
 "JOIN producto pr ON pd.idProducto = pr.idProducto\n" +
-"WHERE p.idMesa = 9;"; 
+"WHERE p.idMesa = ? AND pagado=0;"; 
   try {             
             PreparedStatement ps = con.prepareStatement(consulta);
             ps.setInt(1, idMesa);

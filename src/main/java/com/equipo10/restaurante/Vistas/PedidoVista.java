@@ -33,9 +33,6 @@ public class PedidoVista extends javax.swing.JPanel {
     private MesaData m = new MesaData();
     private MeseroData me = new MeseroData();
 
-    /**
-     * Creates new form PedidoVistaCOPIA
-     */
     public PedidoVista() {
         initComponents();
         modelo = (DefaultTableModel) jtTabla1.getModel();
@@ -268,7 +265,8 @@ public class PedidoVista extends javax.swing.JPanel {
     }//GEN-LAST:event_atrasMouseReleased
 
     private void jbDetalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDetalleActionPerformed
-        DetallePedidoVista dp = new DetallePedidoVista(Login.prin, true);
+        int id=Integer.valueOf(modelo.getValueAt(jtTabla1.getSelectedRow(), 0).toString());
+        DetallePedidoVista dp = new DetallePedidoVista(Login.prin, true,id);
         dp.setSize(470, 410);
         dp.setLocationRelativeTo(Login.prin);
         dp.setVisible(true);

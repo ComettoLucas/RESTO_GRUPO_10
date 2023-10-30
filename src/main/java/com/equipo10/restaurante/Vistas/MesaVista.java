@@ -114,7 +114,7 @@ public class MesaVista extends javax.swing.JInternalFrame {
     public boolean cerrarMesa(int numeroMesa) {//devuelvo true si fue cerrada
         // Crear una ventana emergente personalizada
         //traerDetalle();
-        DetallePedidoVista detallePedidoVista = new DetallePedidoVista(null, true);
+        DetallePedidoMesaVista detallePedidoVista = new DetallePedidoMesaVista(null, true,numeroMesa);
         detallePedidoVista.setVisible(true);
 
 //ACA MOSTRAR DETALLE!!!!!!!
@@ -131,7 +131,7 @@ public class MesaVista extends javax.swing.JInternalFrame {
                 }
                 mesa.setEstado(false); //cierro la mesa
                 mesaData.CerrarMesaxNRO(mesa);
-                Detalle det = new Detalle(deta);
+                //Detalle det = new Detalle(deta);
 
                 return true;
             } else {
