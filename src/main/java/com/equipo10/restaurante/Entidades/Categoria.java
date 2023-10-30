@@ -8,6 +8,9 @@ public enum Categoria {
     PASTA,
     MINUTA,
     PRINCIPAL,
+    OFERTA,
+    POSTRE,
+    ASD
         
     
 }

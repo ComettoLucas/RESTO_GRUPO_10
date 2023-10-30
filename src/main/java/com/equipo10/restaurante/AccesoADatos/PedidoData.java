@@ -440,7 +440,7 @@ public class PedidoData {
     public ArrayList<Pedido> ListarPedidosDeLaMesa(Mesa m) {
         ArrayList<Pedido> pedidos = new ArrayList<>();
         
-        String sql = "SELECT idPedido FROM pedido WHERE idMesa = ?";
+        String sql = "SELECT idPedido FROM pedido WHERE idMesa = ? and estado=1";
         
         try {
             PreparedStatement ps = con.prepareStatement(sql);

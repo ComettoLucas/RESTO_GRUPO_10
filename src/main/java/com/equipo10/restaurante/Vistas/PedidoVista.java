@@ -25,13 +25,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PedidoVista extends javax.swing.JPanel {
 
-    private static PedidoData pd = new PedidoData();
     public static DefaultTableModel modelo = new DefaultTableModel();
     private static DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
     private static DefaultListCellRenderer dlcr = new DefaultListCellRenderer();
-    public static Pedido pedidoGlobal = new Pedido();
-    private MesaData m = new MesaData();
-    private MeseroData me = new MeseroData();
 
     public PedidoVista() {
         initComponents();
@@ -334,6 +330,7 @@ public class PedidoVista extends javax.swing.JPanel {
     }
 
     public static void CargarTabla() {
+        PedidoData pd = new PedidoData();
         switch (jcFiltro.getSelectedIndex()) {
             case 0:
                 modelo.setRowCount(0);

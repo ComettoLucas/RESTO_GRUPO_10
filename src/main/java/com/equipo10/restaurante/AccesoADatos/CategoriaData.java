@@ -38,6 +38,7 @@ public class CategoriaData {
                 idCategoria = resultSet.getInt("idCategoria");
             }
             statement.close();
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"Error en la Tabla Categoria");
         }

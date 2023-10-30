@@ -1,37 +1,32 @@
 package com.equipo10.restaurante.Vistas;
 
+import com.equipo10.restaurante.AccesoADatos.DetallePedidoData;
 import com.equipo10.restaurante.AccesoADatos.MesaData;
 import com.equipo10.restaurante.AccesoADatos.PedidoData;
 import com.equipo10.restaurante.Entidades.DetallePedido;
 import com.equipo10.restaurante.Entidades.Mesa;
-import com.equipo10.restaurante.ValidacionDatos;
+import com.equipo10.restaurante.Entidades.Pedido;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.SwingConstants;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
 public class MesaVista extends javax.swing.JInternalFrame {
-   
-    Mesa mesa = new Mesa();
-    private MesaData mesaData;
-    PedidoData pd=new PedidoData();
-    
     
     public MesaVista() {
         
@@ -40,7 +35,6 @@ public class MesaVista extends javax.swing.JInternalFrame {
         ui.setNorthPane(null);
         jPmesas.setLayout(new GridLayout(0, 10)); // 0 filas y 3 columnas
            
-        mesaData = new MesaData();
         agregarMesasConEstadoDesdeBaseDeDatos();// con este las levanto
     }
 
@@ -100,7 +94,9 @@ public class MesaVista extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     public void abrirMesa(int numeroMesa) {
-
+        MesaData mesaData = new MesaData();
+        
+        Mesa mesa = new Mesa();
         mesa = mesaData.buscarMesaxNRO(numeroMesa);
         
         if (!mesa.isEstado()) { 
@@ -114,24 +110,50 @@ public class MesaVista extends javax.swing.JInternalFrame {
     public boolean cerrarMesa(int numeroMesa) {//devuelvo true si fue cerrada
         // Crear una ventana emergente personalizada
         //traerDetalle();
+        Mesa mesa = new Mesa();
+        PedidoData pd=new PedidoData();
+        MesaData mesaData = new MesaData();
+        
         DetallePedidoMesaVista detallePedidoVista = new DetallePedidoMesaVista(null, true,numeroMesa);
         detallePedidoVista.setVisible(true);
 
 //ACA MOSTRAR DETALLE!!!!!!!
         int r = JOptionPane.showConfirmDialog(null, "Desea cobrar la mesa?");
         if (r == 0) {//yes
+            DetallePedidoData dpd=new DetallePedidoData();
 
             mesa = mesaData.buscarMesaxNRO(numeroMesa);
             List<DetallePedido> deta = new ArrayList<>();
             pd.buscarPedidosxNumeroMesa(mesa.getIdMesa()); // la mesa puede no tener pedidos
             ArrayList<Integer> pedidos = pd.buscarPedidosxIDMesa(mesa);
             if (!pedidos.isEmpty()) {
+                
+                
+                mesa.setEstado(false); //cierro la mesa
+                mesaData.CerrarMesaxNRO(mesa);
+                for (Pedido cada : pd.ListarPedidosDeLaMesa(mesa)) {
+                    deta.addAll(dpd.obtenerDetalleXPedido(cada));
+                }
                 for (Integer i : pedidos) {
                     pd.CerrarPedido(i);
                 }
-                mesa.setEstado(false); //cierro la mesa
-                mesaData.CerrarMesaxNRO(mesa);
-                //Detalle det = new Detalle(deta);
+                Detalle de = new Detalle(deta);
+                    de.setLocationRelativeTo(Login.prin);
+                    de.setVisible(true);
+
+                    PrinterJob job = PrinterJob.getPrinterJob();
+
+                    job.setPrintable(de);
+
+                    if (job.printDialog()) {
+                        try {
+                            job.print();
+                        } catch (PrinterException ex) {
+
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(this, "No se pudo Imprimir");
+                    }
 
                 return true;
             } else {
@@ -145,7 +167,7 @@ public class MesaVista extends javax.swing.JInternalFrame {
     }
 
 public void agregarMesasConEstadoDesdeBaseDeDatos() {
-
+        MesaData mesaData = new MesaData();
         ArrayList<Mesa> mesasTodas = (ArrayList<Mesa>) mesaData.obtenerTodasMesas();
 
         for (Mesa mesita : mesasTodas) {
