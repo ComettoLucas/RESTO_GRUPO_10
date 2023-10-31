@@ -138,7 +138,6 @@ public class PedidoVista extends javax.swing.JPanel {
         jtTabla1.setRowHeight(25);
         jtTabla1.setSelectionBackground(new java.awt.Color(57, 137, 111));
         jtTabla1.setSelectionForeground(new java.awt.Color(251, 250, 241));
-        jtTabla1.setShowGrid(true);
         jtTabla1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jtTabla1FocusGained(evt);

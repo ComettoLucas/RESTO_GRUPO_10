@@ -164,10 +164,10 @@ public class CargaMesas extends javax.swing.JDialog {
 
     private void jbAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgregarActionPerformed
         if (ValidacionDatos.validarNumeroPositivo(txtnumero.getText())) {
-            if (Integer.parseInt(txtnumero.getText()) <= 10) {
+            if (Integer.parseInt(txtnumero.getText()) <= 70) {
                 me.insertarMesas(Integer.parseInt(txtnumero.getText()));
             } else {
-                JOptionPane.showMessageDialog(null, "Solo puede ingresar hasta 10 mesas");
+                JOptionPane.showMessageDialog(null, "Solo puede ingresar hasta 70 mesas");
             }
 
         }

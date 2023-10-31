@@ -47,7 +47,7 @@ public class MesaData {
             PreparedStatement ps=con.prepareStatement(sql);
             ResultSet rs=ps.executeQuery();
             if(rs.next()){
-                if(rs.getInt(1)<10){
+                if(rs.getInt(1)<70){
                     return true;
                 }
                 

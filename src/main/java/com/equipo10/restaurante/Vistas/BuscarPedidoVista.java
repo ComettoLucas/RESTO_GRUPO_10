@@ -79,7 +79,7 @@ public class BuscarPedidoVista extends javax.swing.JDialog {
         jbBuscar.setText("Buscar");
         jbBuscar.setBorder(null);
         jbBuscar.setBorderPainted(false);
-        jbBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jbBuscar.setFocusPainted(false);
         jbBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -103,7 +103,7 @@ public class BuscarPedidoVista extends javax.swing.JDialog {
         jbSalir.setText("Cancelar");
         jbSalir.setBorder(null);
         jbSalir.setBorderPainted(false);
-        jbSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jbSalir.setFocusPainted(false);
         jbSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -132,7 +132,6 @@ public class BuscarPedidoVista extends javax.swing.JDialog {
 
         jLabel5.setBackground(new java.awt.Color(255, 242, 175));
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/buscar_icon.png"))); // NOI18N
         jLabel5.setText("Pedido/s");

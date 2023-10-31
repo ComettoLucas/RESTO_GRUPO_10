@@ -38,6 +38,7 @@ com\equipo10\restaurante\Vistas\Principal$7.class
 com\equipo10\restaurante\Vistas\PedidoVista$1.class
 com\equipo10\restaurante\Vistas\BuscarPedidoVista$3.class
 com\equipo10\restaurante\Vistas\BuscarPedidoVista.class
+com\equipo10\restaurante\Vistas\MesaVista$2.class
 com\equipo10\restaurante\Vistas\BuscarProducto$8.class
 com\equipo10\restaurante\Vistas\CargaMeseros$4.class
 com\equipo10\restaurante\Vistas\ProductoCargaVista$2.class
@@ -60,6 +61,7 @@ com\equipo10\restaurante\Vistas\PedidoVista$2.class
 com\equipo10\restaurante\Restaurante.class
 com\equipo10\restaurante\Entidades\Producto.class
 com\equipo10\restaurante\Vistas\Login$9.class
+com\equipo10\restaurante\Vistas\MesaVista$3.class
 com\equipo10\restaurante\Vistas\CargaMeseros$3.class
 com\equipo10\restaurante\Vistas\CargaMesas$6.class
 com\equipo10\restaurante\Vistas\BuscarPedidoVista$1.class
@@ -76,6 +78,7 @@ com\equipo10\restaurante\Vistas\AgregarPedidoVista$5.class
 com\equipo10\restaurante\Vistas\CheckInMozo$1.class
 com\equipo10\restaurante\AccesoADatos\MeseroData.class
 com\equipo10\restaurante\Vistas\BuscarPedidoVista$4.class
+com\equipo10\restaurante\Vistas\MesaVista$7.class
 com\equipo10\restaurante\Vistas\Login$10.class
 com\equipo10\restaurante\Vistas\PedidoVista$6.class
 com\equipo10\restaurante\Vistas\ProductoCargaVista$7.class
@@ -88,6 +91,7 @@ com\equipo10\restaurante\Vistas\DetallePedidoMesaVista$2.class
 com\equipo10\restaurante\Entidades\Pedido.class
 com\equipo10\restaurante\Vistas\EditarPedidoVista$4.class
 com\equipo10\restaurante\Vistas\Login$7.class
+com\equipo10\restaurante\Vistas\MesaVista$4.class
 com\equipo10\restaurante\Entidades\Mesa.class
 com\equipo10\restaurante\Vistas\CheckInMozo.class
 com\equipo10\restaurante\AccesoADatos\MesaData.class
@@ -118,6 +122,7 @@ com\equipo10\restaurante\Vistas\ReservaVista$7.class
 com\equipo10\restaurante\Vistas\PedidoVista$4.class
 com\equipo10\restaurante\Vistas\Login$6.class
 com\equipo10\restaurante\Vistas\DetallePedidoVista$3.class
+com\equipo10\restaurante\Vistas\MesaVista$5.class
 com\equipo10\restaurante\AccesoADatos\DetallePedidoData.class
 com\equipo10\restaurante\Vistas\CargaMeseros$1.class
 com\equipo10\restaurante\Vistas\MesaVista$1.class
@@ -138,6 +143,7 @@ com\equipo10\restaurante\Vistas\AgregarPedidoVista$4.class
 com\equipo10\restaurante\Vistas\ReservaVista$1.class
 com\equipo10\restaurante\Vistas\ElegirDNI$2.class
 com\equipo10\restaurante\Vistas\ReservaVista$8.class
+com\equipo10\restaurante\Vistas\MesaVista$6.class
 com\equipo10\restaurante\Vistas\CargaMesas$5.class
 com\equipo10\restaurante\Vistas\PedidoVista.class
 com\equipo10\restaurante\Vistas\PedidoVista$5.class

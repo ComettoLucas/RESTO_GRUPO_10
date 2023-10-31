@@ -111,7 +111,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanelPrincipal.add(jBreservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 250, 191, 50));
 
-        Escritorio.setBackground(new java.awt.Color(218, 247, 166));
+        Escritorio.setBackground(new java.awt.Color(233, 237, 201));
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
@@ -165,7 +165,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar1.setForeground(new java.awt.Color(251, 250, 241));
         jMenuBar1.setBorderPainted(false);
         jMenuBar1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jMenuBar1.setPreferredSize(new java.awt.Dimension(833, 23));
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(833, 29));
         jMenuBar1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jMenuBar1MouseDragged(evt);

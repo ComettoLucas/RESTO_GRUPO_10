@@ -67,6 +67,7 @@ public class CheckInMozo extends javax.swing.JPanel {
         jLabel2.setText("Empleados en Servicio");
         fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 633, -1));
 
+        jScrollPane1.setBackground(new java.awt.Color(233, 237, 201));
         jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 32, 31)));
 
         Tabla.setBackground(new java.awt.Color(233, 237, 201));
@@ -84,7 +85,6 @@ public class CheckInMozo extends javax.swing.JPanel {
         ));
         Tabla.setGridColor(new java.awt.Color(214, 221, 155));
         Tabla.setRowHeight(30);
-        Tabla.setShowGrid(true);
         jScrollPane1.setViewportView(Tabla);
 
         fondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 633, 380));
