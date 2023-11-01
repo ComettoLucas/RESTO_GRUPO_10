@@ -58,7 +58,6 @@ public class EditarPedidoVista extends javax.swing.JDialog {
 
         jLabel1.setBackground(new java.awt.Color(255, 242, 175));
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/actualizar_icon.png"))); // NOI18N
         jLabel1.setText("Pedido");
@@ -66,20 +65,17 @@ public class EditarPedidoVista extends javax.swing.JDialog {
         fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 358, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Mesa");
         fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 47, 200, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Mesero");
         fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 200, -1));
 
         jcEntregado.setBackground(new java.awt.Color(251, 250, 241));
         jcEntregado.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jcEntregado.setForeground(new java.awt.Color(0, 0, 0));
         jcEntregado.setText("Entregado");
         jcEntregado.setBorder(null);
         jcEntregado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -107,7 +103,7 @@ public class EditarPedidoVista extends javax.swing.JDialog {
         jbConfirmar.setText("Confirmar");
         jbConfirmar.setBorder(null);
         jbConfirmar.setBorderPainted(false);
-        jbConfirmar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbConfirmar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jbConfirmar.setFocusPainted(false);
         jbConfirmar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbConfirmar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -131,7 +127,7 @@ public class EditarPedidoVista extends javax.swing.JDialog {
         jbSalir.setText("Salir");
         jbSalir.setBorder(null);
         jbSalir.setBorderPainted(false);
-        jbSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jbSalir.setFocusPainted(false);
         jbSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbSalir.addMouseListener(new java.awt.event.MouseAdapter() {

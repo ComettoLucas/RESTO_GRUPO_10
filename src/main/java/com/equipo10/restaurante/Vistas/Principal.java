@@ -17,7 +17,7 @@ public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/patron.png")));
+        jLfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/patron.png")));
         //imagenes();
         ca.CargarEnumsABD();
     }
@@ -34,7 +34,8 @@ public class Principal extends javax.swing.JFrame {
         Escritorio = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLicono = new javax.swing.JLabel();
+        jLfondo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -156,9 +157,14 @@ public class Principal extends javax.swing.JFrame {
 
         jPanelPrincipal.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 86, 5, 495));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/patron.png"))); // NOI18N
-        jPanelPrincipal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -80, 1030, 700));
+        jLicono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoPrincipal.png"))); // NOI18N
+        jLicono.setText("jLabel3");
+        jPanelPrincipal.add(jLicono, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, -1));
+
+        jLfondo.setBackground(new java.awt.Color(255, 255, 255));
+        jLfondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/patron.png"))); // NOI18N
+        jPanelPrincipal.add(jLfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -80, 1030, 700));
 
         jMenuBar1.setBackground(new java.awt.Color(198, 23, 0));
         jMenuBar1.setBorder(null);
@@ -309,7 +315,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu btnSalir;
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JButton jBreservas;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLfondo;
+    private javax.swing.JLabel jLicono;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
